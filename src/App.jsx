@@ -1,9 +1,12 @@
+import Navbar from './components/Navbar'
+import Hero from './components/Hero'
+
 function App() {
   return (
-    <main>
-      <h1>MONARCH</h1>
-      <p>Coffee for the moments that matter.</p>
-    </main>
+    <>
+      <Navbar />
+      <Hero />
+    </>
   )
 }
 
