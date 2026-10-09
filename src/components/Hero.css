@@ -1,0 +1,100 @@
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 140px 8% 100px;
+  overflow: hidden;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(15, 15, 15, 0.98) 0%,
+      rgba(15, 15, 15, 0.85) 45%,
+      rgba(15, 15, 15, 0.25) 100%
+    ),
+    url('/images/hero-coffee.jpg') center / cover no-repeat;
+}
+
+.hero-content {
+  max-width: 760px;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-label {
+  color: var(--coffee-gold);
+  font-size: 11px;
+  letter-spacing: 4px;
+  margin-bottom: 30px;
+}
+
+.hero h1 {
+  font-size: clamp(58px, 8vw, 110px);
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: -3px;
+}
+
+.hero h1 span {
+  color: var(--coffee-gold);
+  font-style: italic;
+}
+
+.hero-description {
+  max-width: 430px;
+  margin-top: 30px;
+  color: rgba(245, 245, 245, 0.65);
+  font-size: 15px;
+  line-height: 1.9;
+}
+
+.hero-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 35px;
+  margin-top: 35px;
+  padding: 17px 23px;
+  border: 1px solid var(--coffee-gold);
+  color: var(--text-light);
+  font-size: 11px;
+  letter-spacing: 2px;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.hero-button:hover {
+  background: var(--coffee-gold);
+  color: var(--bg-dark);
+}
+
+.hero-bottom {
+  position: absolute;
+  bottom: 30px;
+  left: 8%;
+  right: 8%;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  color: rgba(245, 245, 245, 0.45);
+  font-size: 9px;
+  letter-spacing: 2px;
+}
+
+@media (max-width: 600px) {
+  .hero {
+    padding: 120px 7% 100px;
+    background-position: 60% center;
+  }
+
+  .hero h1 {
+    letter-spacing: -1px;
+  }
+
+  .hero-bottom {
+    left: 7%;
+    right: 7%;
+  }
+
+  .hero-bottom span:nth-child(2) {
+    display: none;
+  }
+}
