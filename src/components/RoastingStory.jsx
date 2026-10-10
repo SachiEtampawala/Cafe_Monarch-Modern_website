@@ -1,4 +1,5 @@
 import './RoastingStory.css'
+import Reveal from './Reveal'
 
 function RoastingStory() {
   const stages = [
@@ -27,39 +28,45 @@ function RoastingStory() {
 
   return (
     <section className="roasting-story" id="our-process">
-      <div className="roasting-heading">
-        <p className="roasting-label">THE ART OF COFFEE</p>
+      <Reveal>
+        <div className="roasting-heading">
+          <p className="roasting-label">THE ART OF COFFEE</p>
 
-        <h2>
-          Great coffee is
-          <br />
-          <span>never an accident.</span>
-        </h2>
+          <h2>
+            Great coffee is
+            <br />
+            <span>never an accident.</span>
+          </h2>
 
-        <p className="roasting-intro">
-          From the first carefully selected bean to the final pour,
-          every detail matters. This is the craft behind MONARCH.
-        </p>
-      </div>
+          <p className="roasting-intro">
+            From the first carefully selected bean to the final pour,
+            every detail matters. This is the craft behind MONARCH.
+          </p>
+        </div>
+      </Reveal>
 
       <div className="roasting-stages">
-        {stages.map((stage) => (
-          <article className="roasting-stage" key={stage.number}>
-            <div className="roasting-image">
-              <img
-                src={stage.image}
-                alt={stage.title}
-                loading="lazy"
-              />
+        {stages.map((stage, index) => (
+          <Reveal key={stage.number} delay={index * 150}>
+            <article className="roasting-stage">
+              <div className="roasting-image">
+                <img
+                  src={stage.image}
+                  alt={stage.title}
+                  loading="lazy"
+                />
 
-              <span className="roasting-number">{stage.number}</span>
-            </div>
+                <span className="roasting-number">
+                  {stage.number}
+                </span>
+              </div>
 
-            <div className="roasting-details">
-              <h3>{stage.title}</h3>
-              <p>{stage.description}</p>
-            </div>
-          </article>
+              <div className="roasting-details">
+                <h3>{stage.title}</h3>
+                <p>{stage.description}</p>
+              </div>
+            </article>
+          </Reveal>
         ))}
       </div>
 
