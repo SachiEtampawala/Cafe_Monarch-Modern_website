@@ -1,3 +1,5 @@
+import './RoastingStory.css'
+
 function RoastingStory() {
   const stages = [
     {
