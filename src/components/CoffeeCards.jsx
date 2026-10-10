@@ -1,4 +1,5 @@
 import './CoffeeCards.css'
+import Reveal from './Reveal'
 
 const coffees = [
   {
@@ -27,38 +28,54 @@ const coffees = [
 function CoffeeCards() {
   return (
     <section className="coffee-collection" id="coffee-collection">
-      <div className="coffee-collection-heading">
-        <div>
-          <p className="collection-label">THE MONARCH SELECTION</p>
-          <h2>
-            Crafted to be
-            <br />
-            <span>savoured.</span>
-          </h2>
-        </div>
+      <Reveal>
+        <div className="coffee-collection-heading">
+          <div>
+            <p className="collection-label">
+              THE MONARCH SELECTION
+            </p>
 
-        <a href="/menu" className="collection-link">
-          EXPLORE ALL COFFEE ↗
-        </a>
-      </div>
+            <h2>
+              Crafted to be
+              <br />
+              <span>savoured.</span>
+            </h2>
+          </div>
+
+          <a href="/menu" className="collection-link">
+            EXPLORE ALL COFFEE ↗
+          </a>
+        </div>
+      </Reveal>
 
       <div className="coffee-grid">
-        {coffees.map((coffee) => (
-          <article className="coffee-card" key={coffee.number}>
-            <div className="coffee-card-image">
-              <img src={coffee.image} alt={coffee.name} loading="lazy" />
-              <span className="coffee-number">{coffee.number}</span>
-            </div>
+        {coffees.map((coffee, index) => (
+          <Reveal key={coffee.number} delay={index * 150}>
+            <article className="coffee-card">
+              <div className="coffee-card-image">
+                <img
+                  src={coffee.image}
+                  alt={coffee.name}
+                  loading="lazy"
+                />
 
-            <div className="coffee-card-details">
-              <div>
-                <h3>{coffee.name}</h3>
-                <p>{coffee.category}</p>
+                <span className="coffee-number">
+                  {coffee.number}
+                </span>
               </div>
 
-              <span className="coffee-price">{coffee.price}</span>
-            </div>
-          </article>
+              <div className="coffee-card-details">
+                <div>
+                  <h3>{coffee.name}</h3>
+                  <p>{coffee.category}</p>
+                </div>
+
+                <span className="coffee-price">
+                  {coffee.price}
+                </span>
+              </div>
+            </article>
+          </Reveal>
         ))}
       </div>
     </section>
