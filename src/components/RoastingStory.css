@@ -1,0 +1,140 @@
+.roasting-story {
+  padding: 130px 8% 45px;
+  background: #15120f;
+  color: #f5f0e9;
+}
+
+.roasting-heading {
+  max-width: 760px;
+  margin: 0 auto 75px;
+  text-align: center;
+}
+
+.roasting-label {
+  margin-bottom: 24px;
+  color: var(--coffee-gold);
+  font-size: 10px;
+  letter-spacing: 4px;
+}
+
+.roasting-heading h2 {
+  font-size: clamp(45px, 6vw, 78px);
+  font-weight: 400;
+  line-height: 1.15;
+}
+
+.roasting-heading h2 span {
+  color: var(--coffee-gold);
+  font-style: italic;
+}
+
+.roasting-intro {
+  max-width: 520px;
+  margin: 25px auto 0;
+  color: rgba(245, 240, 233, 0.65);
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+.roasting-stages {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px;
+}
+
+.roasting-stage:nth-child(2) {
+  margin-top: 65px;
+}
+
+.roasting-stage:nth-child(3) {
+  margin-top: 130px;
+}
+
+.roasting-image {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 4 / 5;
+  background: #30251e;
+}
+
+.roasting-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.8);
+  transition:
+    transform 0.8s ease,
+    filter 0.8s ease;
+}
+
+.roasting-stage:hover .roasting-image img {
+  transform: scale(1.06);
+  filter: brightness(1);
+}
+
+.roasting-number {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  color: #fff;
+  font-size: 12px;
+  letter-spacing: 2px;
+}
+
+.roasting-details {
+  padding: 25px 0;
+}
+
+.roasting-details h3 {
+  margin-bottom: 13px;
+  font-size: clamp(20px, 2.2vw, 27px);
+  font-weight: 400;
+}
+
+.roasting-details p {
+  max-width: 340px;
+  color: rgba(245, 240, 233, 0.6);
+  font-size: 12px;
+  line-height: 1.9;
+}
+
+.roasting-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  margin-top: 75px;
+  padding-top: 25px;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  color: rgba(245, 240, 233, 0.55);
+  font-size: 9px;
+  letter-spacing: 2px;
+}
+
+@media (max-width: 768px) {
+  .roasting-story {
+    padding: 90px 6% 35px;
+  }
+
+  .roasting-stages {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .roasting-stage:nth-child(2),
+  .roasting-stage:nth-child(3) {
+    margin-top: 0;
+  }
+
+  .roasting-image {
+    aspect-ratio: 5 / 4;
+  }
+
+  .roasting-heading {
+    margin-bottom: 50px;
+  }
+
+  .roasting-footer {
+    flex-wrap: wrap;
+    margin-top: 35px;
+  }
+}
