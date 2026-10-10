@@ -3,6 +3,7 @@ import Hero from './components/Hero'
 import CoffeeCards from './components/CoffeeCards'
 import RoastingStory from './components/RoastingStory'
 import CoffeeExperience from './components/CoffeeExperience'
+import Footer from './components/Footer'
 
 function App() {
   return (
@@ -15,6 +16,8 @@ function App() {
         <RoastingStory />
         <CoffeeExperience />
       </main>
+
+      <Footer />
     </>
   )
 }
