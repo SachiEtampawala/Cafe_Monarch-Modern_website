@@ -7,24 +7,21 @@ function RoastingStory() {
       title: 'Carefully Sourced',
       description:
         'Every exceptional cup begins with carefully selected beans from remarkable coffee-growing regions.',
-      image:
-        'https://images.unsplash.com/photo-1447933601403-0c6688de566e?auto=format&fit=crop&w=900&q=85',
+      image: '/images/coffee-sourcing.jpg',
     },
     {
       number: '02',
       title: 'Slowly Roasted',
       description:
         'Our roasting process brings out the unique character, rich aroma, and natural sweetness of every bean.',
-      image:
-        'https://images.unsplash.com/photo-1511537190424-bbbab87ac5eb?auto=format&fit=crop&w=900&q=85',
+      image: '/images/coffee-roasting.jpg',
     },
     {
       number: '03',
       title: 'Beautifully Brewed',
       description:
         'Every drink is prepared with care, turning everyday coffee moments into something worth remembering.',
-      image:
-        'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=900&q=85',
+      image: '/images/coffee-brewing.jpg',
     },
   ]
 
@@ -49,7 +46,11 @@ function RoastingStory() {
         {stages.map((stage) => (
           <article className="roasting-stage" key={stage.number}>
             <div className="roasting-image">
-              <img src={stage.image} alt={stage.title} loading="lazy" />
+              <img
+                src={stage.image}
+                alt={stage.title}
+                loading="lazy"
+              />
 
               <span className="roasting-number">{stage.number}</span>
             </div>
