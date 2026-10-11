@@ -1,0 +1,19 @@
+.home-page {
+  width: 100%;
+  min-height: 100vh;
+  overflow: clip;
+}
+
+.home-page main {
+  width: 100%;
+}
+
+.home-page section {
+  scroll-margin-top: 90px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-page {
+    scroll-behavior: auto;
+  }
+}
