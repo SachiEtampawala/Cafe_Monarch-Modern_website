@@ -1,24 +1,22 @@
-import Navbar from './components/Navbar'
-import Hero from './components/Hero'
-import CoffeeCards from './components/CoffeeCards'
-import RoastingStory from './components/RoastingStory'
-import CoffeeExperience from './components/CoffeeExperience'
-import Footer from './components/Footer'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+
+import Home from './pages/Home'
+import Menu from './pages/Menu'
+import Story from './pages/Story'
+import Visit from './pages/Visit'
+import Contact from './pages/Contact'
 
 function App() {
   return (
-    <>
-      <Navbar />
-
-      <main>
-        <Hero />
-        <CoffeeCards />
-        <RoastingStory />
-        <CoffeeExperience />
-      </main>
-
-      <Footer />
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/menu" element={<Menu />} />
+        <Route path="/story" element={<Story />} />
+        <Route path="/visit" element={<Visit />} />
+        <Route path="/contact" element={<Contact />} />
+      </Routes>
+    </BrowserRouter>
   )
 }
 
