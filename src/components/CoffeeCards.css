@@ -99,13 +99,11 @@
 .coffee-card-image::after {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    180deg,
-    rgba(0, 0, 0, 0.2) 0%,
-    transparent 25%,
-    transparent 65%,
-    rgba(0, 0, 0, 0.12) 100%
-  );
+  background: linear-gradient(180deg,
+      rgba(0, 0, 0, 0.2) 0%,
+      transparent 25%,
+      transparent 65%,
+      rgba(0, 0, 0, 0.12) 100%);
   content: '';
   pointer-events: none;
 }
@@ -290,9 +288,61 @@
 /* Accessibility */
 
 @media (prefers-reduced-motion: reduce) {
+
   .coffee-card-image img,
   .coffee-card-details h3,
   .collection-link {
+    transition: none;
+  }
+}
+
+/* 3D tilt: depth, shadow and light reflection */
+
+.coffee-card-image {
+  transition: box-shadow 0.5s ease;
+}
+
+.coffee-card:hover .coffee-card-image {
+  box-shadow: 0 28px 50px -14px rgba(36, 26, 20, 0.4);
+}
+
+/* Light reflection that follows the mouse */
+.coffee-card-image::before {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: radial-gradient(circle at var(--glare-x, 50%) var(--glare-y, 50%),
+      rgba(255, 255, 255, 0.22),
+      transparent 55%);
+  content: '';
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+}
+
+.coffee-card:hover .coffee-card-image::before {
+  opacity: 1;
+}
+
+/* Text floats slightly above the image on hover */
+.coffee-card-details {
+  transition: transform 0.4s ease;
+}
+
+.coffee-card:hover .coffee-card-details {
+  transform: translateZ(25px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  .coffee-card-image,
+  .coffee-card-image::before {
+    transition: none;
+  }
+
+  .coffee-card-details,
+  .coffee-card:hover .coffee-card-details {
+    transform: none;
     transition: none;
   }
 }
