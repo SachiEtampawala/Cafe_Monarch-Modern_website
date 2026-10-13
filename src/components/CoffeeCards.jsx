@@ -1,5 +1,7 @@
+import { Link } from 'react-router-dom'
 import './CoffeeCards.css'
 import Reveal from './Reveal'
+import TiltCard from './TiltCard'
 
 const coffees = [
   {
@@ -42,16 +44,16 @@ function CoffeeCards() {
             </h2>
           </div>
 
-          <a href="/menu" className="collection-link">
+          <Link to="/menu" className="collection-link">
             EXPLORE ALL COFFEE ↗
-          </a>
+          </Link>
         </div>
       </Reveal>
 
       <div className="coffee-grid">
         {coffees.map((coffee, index) => (
           <Reveal key={coffee.number} delay={index * 150}>
-            <article className="coffee-card">
+            <TiltCard as="article" className="coffee-card">
               <div className="coffee-card-image">
                 <img
                   src={coffee.image}
@@ -74,7 +76,7 @@ function CoffeeCards() {
                   {coffee.price}
                 </span>
               </div>
-            </article>
+            </TiltCard>
           </Reveal>
         ))}
       </div>
