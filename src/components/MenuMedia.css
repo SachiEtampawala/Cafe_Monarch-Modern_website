@@ -1,0 +1,190 @@
+/* Card button */
+.menu-media-button {
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+
+    border: none;
+    background: transparent;
+    cursor: zoom-in;
+}
+
+.menu-media-button:disabled {
+    cursor: default;
+}
+
+.menu-media-button:focus-visible {
+    outline-offset: -5px;
+}
+
+.menu-media video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.9s cubic-bezier(0.2, 0.65, 0.3, 1);
+}
+
+.menu-media:hover video {
+    transform: scale(1.05);
+}
+
+/* Small label on the card */
+.menu-media-hint {
+    position: absolute;
+    bottom: 16px;
+    left: 16px;
+    z-index: 2;
+
+    padding: 8px 14px;
+
+    background: rgba(36, 26, 20, 0.55);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 999px;
+
+    color: var(--cream);
+    font-size: 9px;
+    letter-spacing: 2px;
+    pointer-events: none;
+}
+
+/* Pop-up */
+.menu-lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+
+    display: grid;
+    place-items: center;
+    padding: 24px;
+
+    background: rgba(23, 18, 15, 0.82);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    animation: lightbox-fade 0.3s ease;
+}
+
+.menu-lightbox-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    width: min(520px, 100%);
+    max-height: calc(100svh - 48px);
+    overflow: hidden;
+
+    background: var(--bg-dark-soft);
+    border: 1px solid rgba(198, 156, 109, 0.25);
+    border-radius: 6px;
+    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.5);
+
+    animation: lightbox-pop 0.4s cubic-bezier(0.2, 0.65, 0.3, 1);
+}
+
+.menu-lightbox-media {
+    width: 100%;
+    min-height: 0;
+    aspect-ratio: 4 / 5;
+    max-height: calc(100svh - 200px);
+
+    background: linear-gradient(145deg, var(--coffee-brown), var(--bg-dark-soft));
+}
+
+.menu-lightbox-media img,
+.menu-lightbox-media video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.menu-lightbox-caption {
+    padding: 20px 26px 24px;
+    color: var(--text-on-dark);
+}
+
+.menu-lightbox-caption h3 {
+    margin-bottom: 6px;
+    font-size: 26px;
+}
+
+.menu-lightbox-caption p {
+    color: var(--text-muted-on-dark);
+    font-size: 13px;
+}
+
+.menu-lightbox-close {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    z-index: 2;
+
+    width: 42px;
+    height: 42px;
+
+    background: rgba(23, 18, 15, 0.55);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+
+    color: #fff;
+    font-size: 24px;
+    line-height: 1;
+    cursor: pointer;
+
+    transition:
+        background 0.3s ease,
+        transform 0.3s ease;
+}
+
+.menu-lightbox-close:hover {
+    background: var(--coffee-warm);
+    transform: rotate(90deg);
+}
+
+@keyframes lightbox-fade {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes lightbox-pop {
+    from {
+        opacity: 0;
+        transform: translateY(24px) scale(0.96);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@media (max-width: 700px) {
+    .menu-media-hint {
+        bottom: 12px;
+        left: 12px;
+    }
+
+    .menu-lightbox {
+        padding: 14px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .menu-media video,
+    .menu-lightbox,
+    .menu-lightbox-content,
+    .menu-lightbox-close {
+        animation: none;
+        transition: none;
+    }
+}
