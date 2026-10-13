@@ -1,0 +1,26 @@
+/* 3D tilt card */
+.tilt-card {
+    --tilt-x: 0deg;
+    --tilt-y: 0deg;
+
+    transform-style: preserve-3d;
+    transform: perspective(1000px) rotateX(var(--tilt-x)) rotateY(var(--tilt-y));
+
+    /* Slow and smooth when the mouse leaves */
+    transition: transform 0.6s cubic-bezier(0.2, 0.65, 0.3, 1);
+    will-change: transform;
+}
+
+/* Fast and responsive while the mouse is over the card */
+.tilt-card:hover {
+    transition: transform 0.12s ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .tilt-card,
+    .tilt-card:hover {
+        transform: none;
+        transition: none;
+    }
+}
