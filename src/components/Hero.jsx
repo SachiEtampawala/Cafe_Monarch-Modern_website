@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react'
+import { Link } from 'react-router-dom'
 import './Hero.css'
 
 function Hero() {
@@ -83,9 +84,9 @@ function Hero() {
               and moments worth slowing down for.
             </p>
 
-            <a href="/menu" className="hero-button">
+            <Link to="/menu" className="hero-button">
               EXPLORE OUR MENU <span>↗</span>
-            </a>
+            </Link>
           </div>
 
           <div className="hero-bottom">
