@@ -123,13 +123,11 @@
 .roasting-image::after {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    180deg,
-    rgba(0, 0, 0, 0.25) 0%,
-    transparent 35%,
-    transparent 65%,
-    rgba(0, 0, 0, 0.35) 100%
-  );
+  background: linear-gradient(180deg,
+      rgba(0, 0, 0, 0.25) 0%,
+      transparent 35%,
+      transparent 65%,
+      rgba(0, 0, 0, 0.35) 100%);
   content: '';
   pointer-events: none;
 }
@@ -335,8 +333,60 @@
 /* Accessibility */
 
 @media (prefers-reduced-motion: reduce) {
+
   .roasting-image img,
   .roasting-details h3::after {
+    transition: none;
+  }
+}
+
+/* 3D tilt: depth, shadow and light reflection */
+
+.roasting-image {
+  transition: box-shadow 0.5s ease;
+}
+
+.roasting-stage:hover .roasting-image {
+  box-shadow: 0 30px 55px -14px rgba(0, 0, 0, 0.65);
+}
+
+/* Light reflection that follows the mouse */
+.roasting-image::before {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: radial-gradient(circle at var(--glare-x, 50%) var(--glare-y, 50%),
+      rgba(255, 235, 205, 0.2),
+      transparent 55%);
+  content: '';
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+}
+
+.roasting-stage:hover .roasting-image::before {
+  opacity: 1;
+}
+
+/* Text floats slightly above the image on hover */
+.roasting-details {
+  transition: transform 0.4s ease;
+}
+
+.roasting-stage:hover .roasting-details {
+  transform: translateZ(25px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  .roasting-image,
+  .roasting-image::before {
+    transition: none;
+  }
+
+  .roasting-details,
+  .roasting-stage:hover .roasting-details {
+    transform: none;
     transition: none;
   }
 }
