@@ -1,10 +1,7 @@
 // MENU DATA
 // Edit item names, descriptions and prices here.
-// Each category needs a photo in public/images/
-// (for example: menu-espresso-classics.jpg).
-// A video is optional: put it in public/videos/ and add a "video" line
-// to the category, for example:
-// video: '/videos/menu-espresso-classics.mp4',
+// Each category has a photo in public/images/ and a video in public/videos/.
+// The video line is optional: delete it if a category has no video.
 
 export const menuCategories = [
     {
@@ -12,7 +9,8 @@ export const menuCategories = [
         label: 'Espresso Classics',
         title: 'Espresso Classics',
         description: 'Rich, bold, and timeless.',
-        image: '/images/menu-espresso-classics.jpg',
+        image: '/images/espresso-classics.jpg',
+        video: '/videos/espresso-classics.mp4',
         imageAlt: 'A freshly pulled espresso in a small cup',
         items: [
             { name: 'Espresso', description: 'A rich, concentrated shot of coffee.', price: 'Rs. 500' },
@@ -27,7 +25,8 @@ export const menuCategories = [
         label: 'Signature Hot',
         title: 'Signature Hot Coffees',
         description: 'Comforting coffee with a creative twist.',
-        image: '/images/menu-signature-hot-coffees.jpg',
+        image: '/images/signature-hot-coffees.jpg',
+        video: '/videos/signature-hot-coffees.mp4',
         imageAlt: 'A latte with latte art in a ceramic cup',
         items: [
             { name: 'Caramel Macchiato', description: 'Espresso, steamed milk and caramel.', price: 'Rs. 900' },
@@ -42,7 +41,8 @@ export const menuCategories = [
         label: 'Iced Coffee',
         title: 'Iced Coffee Creations',
         description: 'Chilled coffee, made to refresh.',
-        image: '/images/menu-iced-coffee-creations.jpg',
+        image: '/images/iced-coffee-creations.jpg',
+        video: '/videos/iced-coffee-creations.mp4',
         imageAlt: 'A tall glass of iced coffee with ice cubes',
         items: [
             { name: 'Iced Americano', description: 'Bold espresso served over ice.', price: 'Rs. 700' },
@@ -57,7 +57,8 @@ export const menuCategories = [
         label: 'Tea',
         title: 'Tea & Botanical Infusions',
         description: 'Delicate flavours for slower moments.',
-        image: '/images/menu-tea-infusions.jpg',
+        image: '/images/tea-infusions.jpg',
+        video: '/videos/tea-infusions.mp4',
         imageAlt: 'A teapot and a cup of tea on a wooden table',
         items: [
             { name: 'English Breakfast Tea', description: 'A strong, classic black tea.', price: 'Rs. 450' },
@@ -72,7 +73,8 @@ export const menuCategories = [
         label: 'Refreshers',
         title: 'Refreshing Drinks',
         description: 'Bright, cool and full of flavour.',
-        image: '/images/menu-refreshing-drinks.jpg',
+        image: '/images/refreshing-drinks.jpg',
+        video: '/videos/refreshing-drinks.mp4',
         imageAlt: 'A cold mojito with mint and lime',
         items: [
             { name: 'Classic Mint Mojito', description: 'Fresh mint, lime and sparkling soda.', price: 'Rs. 700' },
@@ -87,7 +89,8 @@ export const menuCategories = [
         label: 'Sweet Treats',
         title: 'Sweet Treats',
         description: 'Little indulgences for sweet moments.',
-        image: '/images/menu-sweet-treats.jpg',
+        image: '/images/sweet-treats.jpg',
+        video: '/videos/sweet-treats.mp4',
         imageAlt: 'A slice of cheesecake and chocolate desserts',
         group: {
             eyebrow: 'FROM OUR KITCHEN',
@@ -112,7 +115,8 @@ export const menuCategories = [
         label: 'Savoury Bites',
         title: 'Savoury Bakes & Bites',
         description: 'Warm, flaky and satisfying.',
-        image: '/images/menu-savoury-bakes.jpg',
+        image: '/images/savoury-bakes.jpg',
+        video: '/videos/savoury-bakes.mp4',
         imageAlt: 'Freshly baked pastries and a sandwich on a board',
         items: [
             { name: 'Grilled Chicken & Cheese Sandwich', description: 'Toasted with chicken and melted cheese.', price: 'Rs. 900' },
