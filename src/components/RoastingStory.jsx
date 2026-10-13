@@ -1,5 +1,6 @@
 import './RoastingStory.css'
 import Reveal from './Reveal'
+import TiltCard from './TiltCard'
 
 function RoastingStory() {
   const stages = [
@@ -48,7 +49,7 @@ function RoastingStory() {
       <div className="roasting-stages">
         {stages.map((stage, index) => (
           <Reveal key={stage.number} delay={index * 150}>
-            <article className="roasting-stage">
+            <TiltCard as="article" className="roasting-stage">
               <div className="roasting-image">
                 <img
                   src={stage.image}
@@ -65,7 +66,7 @@ function RoastingStory() {
                 <h3>{stage.title}</h3>
                 <p>{stage.description}</p>
               </div>
-            </article>
+            </TiltCard>
           </Reveal>
         ))}
       </div>
