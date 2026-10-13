@@ -3,6 +3,7 @@ import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import Reveal from '../components/Reveal'
 import MenuMedia from '../components/MenuMedia'
+import MenuPhotoStrip from '../components/MenuPhotoStrip'
 import { menuCategories } from '../data/menuData'
 import './Menu.css'
 
@@ -26,6 +27,9 @@ function Menu() {
             </a>
           ))}
         </nav>
+
+        {/* Photo cards under the bar */}
+        <MenuPhotoStrip categories={menuCategories} />
 
         <div className="menu-categories">
           {menuCategories.map((category, index) => (
