@@ -9,12 +9,12 @@ function Visit() {
 
       <main>
         <header className="visit-hero">
-          <span className="visit-eyebrow">YOUR TABLE IS WAITING</span>
+          <span className="visit-eyebrow">YOUR TABLE IS WAITING 🤎</span>
 
           <h1>
             Come find
             <br />
-            <em>your moment.</em>
+            <em>your moment...</em>
           </h1>
 
           <p>
@@ -37,7 +37,7 @@ function Visit() {
           <div className="visit-detail">
             <span className="visit-label">FIND US</span>
             <h2>Our Location</h2>
-            <p>Location details coming soon.</p>
+            <p>Colombo</p>
             <p>Sri Lanka</p>
           </div>
 
@@ -68,12 +68,12 @@ function Visit() {
               Contact our team ↗
             </a>
 
-            <p>We look forward to welcoming you.</p>
+            <p>We look forward to welcoming you with pleasure.</p>
           </div>
         </section>
 
         <section className="visit-ending">
-          <h2>Your next favourite moment starts here.</h2>
+          <h2>Your next favourite moment starts here...</h2>
           <a href="/menu">EXPLORE OUR MENU ↗</a>
         </section>
       </main>
