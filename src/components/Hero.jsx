@@ -1,101 +1,119 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import './Hero.css'
 
 function Hero() {
-  const sectionRef = useRef(null)
   const videoRef = useRef(null)
 
+  // True if the visitor asked their device for less motion
+  const [reduceMotion] = useState(
+    () => window.matchMedia('(prefers-reduced-motion: reduce)').matches,
+  )
+
+  // True when the intro video is finished and the text can appear
+  const [introDone, setIntroDone] = useState(reduceMotion)
+
   useEffect(() => {
-    const section = sectionRef.current
     const video = videoRef.current
 
-    if (!section || !video) return
+    if (!video) return
 
-    let animationFrame
+    // Less motion: no autoplay, show the last frame of the video
+    if (reduceMotion) {
+      const showLastFrame = () => {
+        video.currentTime = video.duration
+      }
 
-    const updateVideo = () => {
-      cancelAnimationFrame(animationFrame)
+      if (video.readyState >= 1) {
+        showLastFrame()
+      } else {
+        video.addEventListener('loadedmetadata', showLastFrame, { once: true })
+      }
 
-      animationFrame = requestAnimationFrame(() => {
-        if (!video.duration || !Number.isFinite(video.duration)) return
-
-        const rect = section.getBoundingClientRect()
-        const scrollDistance = section.offsetHeight - window.innerHeight
-
-        if (scrollDistance <= 0) return
-
-        const progress = Math.min(
-          1,
-          Math.max(0, -rect.top / scrollDistance),
-        )
-
-        const targetTime = progress * video.duration
-
-        if (Math.abs(video.currentTime - targetTime) > 0.04) {
-          video.currentTime = targetTime
-        }
-      })
+      return () => video.removeEventListener('loadedmetadata', showLastFrame)
     }
 
-    video.pause()
+    // If the browser blocks autoplay, show the text straight away
+    video.play().catch(() => setIntroDone(true))
+  }, [reduceMotion])
 
-    video.addEventListener('loadedmetadata', updateVideo)
-    window.addEventListener('scroll', updateVideo, { passive: true })
-    window.addEventListener('resize', updateVideo)
+  // Skip button: jump to the end of the video
+  const skipIntro = () => {
+    const video = videoRef.current
 
-    updateVideo()
-
-    return () => {
-      cancelAnimationFrame(animationFrame)
-      video.removeEventListener('loadedmetadata', updateVideo)
-      window.removeEventListener('scroll', updateVideo)
-      window.removeEventListener('resize', updateVideo)
+    if (video && video.duration) {
+      video.pause()
+      video.currentTime = video.duration
     }
-  }, [])
+
+    setIntroDone(true)
+  }
 
   return (
-    <section className="hero" ref={sectionRef}>
-      <div className="hero-sticky">
-        <video
-          ref={videoRef}
-          className="hero-video"
-          src="/videos/coffee-pour.mp4"
-          muted
-          playsInline
-          preload="auto"
-          aria-label="Coffee being poured into a cup"
-        />
+    <section className={`hero ${introDone ? 'hero-intro-done' : ''}`}>
+      <video
+        ref={videoRef}
+        className="hero-video"
+        src="/videos/hero-cafe.mp4"
+        poster="/images/hero-poster.jpg"
+        autoPlay={!reduceMotion}
+        muted
+        playsInline
+        preload="auto"
+        aria-hidden="true"
+        onEnded={() => setIntroDone(true)}
+        onError={() => setIntroDone(true)}
+      />
 
-        <div className="hero-overlay">
-          <div className="hero-content">
-            <p className="hero-label">A NEW KIND OF COFFEE EXPERIENCE</p>
+      {/* Dark fade on the left that appears after the video */}
+      <div className="hero-shade"></div>
 
-            <h1>
-              Coffee for
-              <br />
-              the moments
-              <br />
-              <span>that matter.</span>
-            </h1>
+      <div className="hero-content">
+        <p className="hero-label hero-reveal" style={{ '--delay': '0.1s' }}>
+          A NEW KIND OF COFFEE EXPERIENCE
+        </p>
 
-            <p className="hero-description">
-              Discover exceptional coffee, thoughtful craftsmanship,
-              and moments worth slowing down for.
-            </p>
+        <h1>
+          <span className="hero-line hero-reveal" style={{ '--delay': '0.25s' }}>
+            Coffee for
+          </span>
+          <span className="hero-line hero-reveal" style={{ '--delay': '0.4s' }}>
+            the moments
+          </span>
+          <span
+            className="hero-line hero-line-accent hero-reveal"
+            style={{ '--delay': '0.55s' }}
+          >
+            that matter.
+          </span>
+        </h1>
 
-            <Link to="/menu" className="hero-button">
-              EXPLORE OUR MENU <span>↗</span>
-            </Link>
-          </div>
+        <p
+          className="hero-description hero-reveal"
+          style={{ '--delay': '0.7s' }}
+        >
+          Discover exceptional coffee, thoughtful craftsmanship,
+          and moments worth slowing down for.
+        </p>
 
-          <div className="hero-bottom">
-            <span>CRAFTED WITH PASSION</span>
-            <span>EST. 2026</span>
-            <span>SCROLL TO DISCOVER ↓</span>
-          </div>
+        <div className="hero-reveal" style={{ '--delay': '0.85s' }}>
+          <Link to="/menu" className="hero-button">
+            EXPLORE OUR MENU <span>↗</span>
+          </Link>
         </div>
       </div>
+
+      <div className="hero-bottom hero-reveal" style={{ '--delay': '1s' }}>
+        <span>CRAFTED WITH PASSION</span>
+        <span>EST. 2026</span>
+        <a href="#coffee-collection">SCROLL TO DISCOVER ↓</a>
+      </div>
+
+      {!introDone && (
+        <button className="hero-skip" type="button" onClick={skipIntro}>
+          SKIP INTRO
+        </button>
+      )}
     </section>
   )
 }
