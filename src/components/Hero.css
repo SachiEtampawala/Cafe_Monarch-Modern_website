@@ -1,22 +1,14 @@
-/* MONARCH — CINEMATIC HERO */
-
+/* Hero section with intro video */
 .hero {
   position: relative;
-  height: 300vh;
-  background: var(--bg-dark);
-}
-
-.hero-sticky {
-  position: sticky;
-  top: 0;
   height: 100vh;
+  height: 100svh;
   min-height: 600px;
   overflow: hidden;
   background: var(--bg-dark);
 }
 
 /* Background video */
-
 .hero-video {
   position: absolute;
   inset: 0;
@@ -24,40 +16,72 @@
   height: 100%;
   object-fit: cover;
   object-position: center;
-  transform: scale(1.02);
 }
 
-/* Cinematic overlays */
-
-.hero-overlay {
+/* Soft dark fade at the top so the header is easy to read */
+.hero::before {
   position: absolute;
   inset: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 110px 9% 90px;
-  background:
-    linear-gradient(
-      90deg,
-      rgba(10, 9, 8, 0.94) 0%,
-      rgba(15, 12, 10, 0.78) 32%,
-      rgba(15, 12, 10, 0.35) 65%,
-      rgba(15, 12, 10, 0.12) 100%
-    ),
-    linear-gradient(
-      0deg,
-      rgba(10, 9, 8, 0.75) 0%,
-      transparent 30%,
-      rgba(10, 9, 8, 0.15) 100%
-    );
+  z-index: 1;
+  background: linear-gradient(180deg, rgba(10, 9, 8, 0.45) 0%, transparent 28%);
+  content: '';
+  pointer-events: none;
 }
 
-/* Hero text */
+/* Dark fade on the left, appears after the video ends */
+.hero-shade {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+
+  background:
+    linear-gradient(90deg,
+      rgba(10, 9, 8, 0.92) 0%,
+      rgba(15, 12, 10, 0.75) 35%,
+      rgba(15, 12, 10, 0.3) 68%,
+      rgba(15, 12, 10, 0.1) 100%),
+    linear-gradient(0deg, rgba(10, 9, 8, 0.7) 0%, transparent 30%);
+
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 1.4s ease;
+}
+
+.hero-intro-done .hero-shade {
+  opacity: 1;
+}
+
+/* Text: slides in from the left after the video */
+.hero-reveal {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(-90px);
+
+  transition:
+    opacity 1s ease var(--delay, 0s),
+    transform 1.3s cubic-bezier(0.16, 1, 0.3, 1) var(--delay, 0s),
+    visibility 0s linear var(--delay, 0s);
+}
+
+.hero-intro-done .hero-reveal {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0);
+}
 
 .hero-content {
   position: relative;
+  z-index: 2;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+
+  width: 100%;
   max-width: 850px;
-  animation: heroContentReveal 1.1s ease both;
+  height: 100%;
+  padding: 110px 0 90px 9%;
 }
 
 .hero-label {
@@ -65,6 +89,7 @@
   align-items: center;
   gap: 14px;
   margin-bottom: 32px;
+
   color: var(--coffee-gold);
   font-size: 10px;
   font-weight: 500;
@@ -80,24 +105,25 @@
 }
 
 .hero h1 {
-  margin: 0;
-  color: #f5f0e8;
-  font-family: 'Playfair Display', serif;
+  color: var(--cream);
   font-size: clamp(58px, 8.2vw, 112px);
-  font-weight: 400;
   line-height: 1.04;
   letter-spacing: -3.5px;
 }
 
-.hero h1 span {
+.hero-line {
+  display: block;
+}
+
+.hero-line-accent {
   color: var(--coffee-gold);
   font-style: italic;
-  font-weight: 400;
 }
 
 .hero-description {
   max-width: 420px;
   margin-top: 30px;
+
   color: rgba(245, 240, 232, 0.75);
   font-size: 14px;
   font-weight: 300;
@@ -105,24 +131,23 @@
   letter-spacing: 0.3px;
 }
 
-/* Premium CTA button */
-
+/* Button */
 .hero-button {
-  position: relative;
   display: inline-flex;
   align-items: center;
   justify-content: space-between;
   gap: 35px;
+
   min-width: 235px;
   margin-top: 35px;
   padding: 18px 21px;
-  overflow: hidden;
+
   border: 1px solid rgba(198, 156, 109, 0.75);
-  background: transparent;
-  color: #f5f0e8;
+  color: var(--cream);
   font-size: 10px;
   font-weight: 500;
   letter-spacing: 2px;
+
   transition:
     color 0.35s ease,
     border-color 0.35s ease,
@@ -140,74 +165,74 @@
 .hero-button:hover {
   border-color: var(--coffee-gold);
   background: var(--coffee-gold);
-  color: #15110e;
+  color: var(--bg-dark);
 }
 
 .hero-button:hover span {
-  color: #15110e;
+  color: var(--bg-dark);
   transform: translate(3px, -3px);
 }
 
-.hero-button:focus-visible {
-  outline: 2px solid var(--coffee-gold);
-  outline-offset: 5px;
-}
-
-/* Bottom information */
-
+/* Bottom line */
 .hero-bottom {
   position: absolute;
   right: 9%;
   bottom: 35px;
   left: 9%;
+  z-index: 2;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 20px;
   padding-top: 20px;
+
   border-top: 1px solid rgba(245, 240, 232, 0.2);
   color: rgba(245, 240, 232, 0.65);
   font-size: 9px;
-  font-weight: 400;
   letter-spacing: 2.5px;
 }
 
-.hero-bottom span:last-child {
+.hero-bottom a {
   color: var(--coffee-gold);
 }
 
-/* Entrance animation */
+/* Skip button (only while the video plays) */
+.hero-skip {
+  position: absolute;
+  right: 9%;
+  bottom: 40px;
+  z-index: 3;
 
-@keyframes heroContentReveal {
-  from {
-    opacity: 0;
-    transform: translateY(24px);
-  }
+  padding: 11px 20px;
 
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  background: rgba(36, 26, 20, 0.45);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(245, 240, 232, 0.35);
+  border-radius: 999px;
+
+  color: var(--cream);
+  font-size: 9px;
+  letter-spacing: 2.5px;
+  cursor: pointer;
+
+  transition:
+    background 0.3s ease,
+    border-color 0.3s ease,
+    color 0.3s ease;
+}
+
+.hero-skip:hover {
+  background: var(--coffee-gold);
+  border-color: var(--coffee-gold);
+  color: var(--bg-dark);
 }
 
 /* Tablet */
-
 @media (max-width: 900px) {
-  .hero-overlay {
-    padding-right: 7%;
+  .hero-content {
     padding-left: 7%;
-    background:
-      linear-gradient(
-        90deg,
-        rgba(10, 9, 8, 0.9),
-        rgba(15, 12, 10, 0.5) 75%,
-        rgba(15, 12, 10, 0.3)
-      ),
-      linear-gradient(
-        0deg,
-        rgba(10, 9, 8, 0.65),
-        transparent 50%
-      );
   }
 
   .hero h1 {
@@ -215,40 +240,30 @@
     letter-spacing: -2px;
   }
 
-  .hero-bottom {
+  .hero-bottom,
+  .hero-skip {
     right: 7%;
+  }
+
+  .hero-bottom {
     left: 7%;
   }
 }
 
 /* Mobile */
-
 @media (max-width: 600px) {
   .hero {
-    height: 250vh;
+    min-height: 560px;
   }
 
-  .hero-sticky {
-    min-height: 550px;
-  }
-
-  .hero-video {
-    object-position: 62% center;
-  }
-
-  .hero-overlay {
-    padding: 100px 7% 100px;
+  .hero-shade {
     background:
-      linear-gradient(
-        90deg,
-        rgba(10, 9, 8, 0.88),
-        rgba(15, 12, 10, 0.53)
-      ),
-      linear-gradient(
-        0deg,
-        rgba(10, 9, 8, 0.75),
-        transparent 65%
-      );
+      linear-gradient(90deg, rgba(10, 9, 8, 0.88), rgba(15, 12, 10, 0.55)),
+      linear-gradient(0deg, rgba(10, 9, 8, 0.75), transparent 65%);
+  }
+
+  .hero-content {
+    padding: 100px 7% 100px;
   }
 
   .hero-label {
@@ -284,9 +299,7 @@
   }
 
   .hero-bottom {
-    right: 7%;
     bottom: 22px;
-    left: 7%;
     padding-top: 15px;
     font-size: 8px;
     letter-spacing: 1.2px;
@@ -295,12 +308,17 @@
   .hero-bottom span:nth-child(2) {
     display: none;
   }
+
+  .hero-skip {
+    bottom: 28px;
+    padding: 10px 16px;
+    font-size: 8px;
+  }
 }
 
 /* Short screens */
-
 @media (max-height: 650px) and (min-width: 601px) {
-  .hero-sticky {
+  .hero {
     min-height: 500px;
   }
 
@@ -321,15 +339,17 @@
   }
 }
 
-/* Accessibility */
-
+/* Reduced motion: no sliding, text is simply shown */
 @media (prefers-reduced-motion: reduce) {
-  .hero-content {
-    animation: none;
+  .hero-reveal {
+    transform: none;
+    transition: none;
   }
 
+  .hero-shade,
   .hero-button,
-  .hero-button span {
+  .hero-button span,
+  .hero-skip {
     transition: none;
   }
 }
