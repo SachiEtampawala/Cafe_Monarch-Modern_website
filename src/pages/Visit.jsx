@@ -28,7 +28,7 @@ function Visit() {
 
         <section className="visit-image">
           <img
-            src="/images/coffee-experience.jpg"
+            src="/images/visit-cafe.jpg"
             alt="Inside the MONARCH café"
           />
         </section>
