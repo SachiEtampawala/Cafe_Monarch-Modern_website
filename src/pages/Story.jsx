@@ -47,8 +47,8 @@ function Story() {
         <section className="story-introduction">
           <div className="story-intro-image">
             <img
-              src="/images/coffee-experience.jpg"
-              alt="A warm and welcoming café interior"
+              src="/images/story-philosophy.jpg"
+              alt="A barista carefully preparing coffee at MONARCH"
             />
           </div>
 
