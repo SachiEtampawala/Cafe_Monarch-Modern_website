@@ -33,14 +33,14 @@ function Story() {
           <span className="story-eyebrow">THE STORY OF MONARCH</span>
 
           <h1>
-            More than coffee.
+            More than coffee,
             <br />
-            <em>A feeling.</em>
+            <em>A feeling...</em>
           </h1>
 
           <p>
             Coffee for the moments that matter.
-            A little pause in a busy world.
+            A little pause in a busy world 🤎.
           </p>
         </header>
 
@@ -58,15 +58,13 @@ function Story() {
             <h2>Every cup has a story.</h2>
 
             <p>
-              At MONARCH, we believe the best coffee moments are often the
-              simplest ones: a quiet morning, a conversation with a friend,
-              or a well-deserved break.
+              MONARCH is where specialty coffee meets modern living. From slow mornings to late-night conversations, we create the perfect atmosphere to pause, reconnect, and enjoy the little things that make every moment feel special.
             </p>
 
             <p>
-              Our philosophy brings together carefully prepared coffee,
-              thoughtful craftsmanship and spaces that invite you to slow down.
+              Every detail tells a story — from expertly crafted coffee and carefully selected ingredients to our warm, contemporary interiors. Inspired by minimalism and a touch of luxury, MONARCH is more than a café; it's a mood, a feeling, and your own little escape from the everyday.
             </p>
+
           </div>
         </section>
 
