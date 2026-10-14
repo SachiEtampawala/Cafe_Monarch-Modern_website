@@ -1,6 +1,7 @@
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import './Contact.css'
+import './ContactImage.css'
 
 function Contact() {
   function handleSubmit(event) {
@@ -27,6 +28,14 @@ function Contact() {
             Send us a message.
           </p>
         </header>
+
+        <section className="contact-image">
+          <img
+            src="/images/contact-hello.jpg"
+            alt="A warm welcome at the MONARCH café"
+            loading="lazy"
+          />
+        </section>
 
         <section className="contact-content">
           <div className="contact-information">
