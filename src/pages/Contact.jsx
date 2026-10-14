@@ -15,12 +15,12 @@ function Contact() {
 
       <main>
         <header className="contact-hero">
-          <span className="contact-eyebrow">WE WOULD LOVE TO HEAR FROM YOU</span>
+          <span className="contact-eyebrow">WE WOULD LOVE TO HEAR FROM YOU 🤎</span>
 
           <h1>
             Let's start
             <br />
-            <em>a conversation.</em>
+            <em>a conversation...</em>
           </h1>
 
           <p>
@@ -51,7 +51,7 @@ function Contact() {
             <div className="contact-information-item">
               <span>Email</span>
               <a href="mailto:hello@cafemonarch.com">
-                hello@cafemonarch.com
+                hello.cafemonarch@gmail.com
               </a>
             </div>
 
@@ -62,7 +62,7 @@ function Contact() {
 
             <div className="contact-information-item">
               <span>Location</span>
-              <p>Sri Lanka</p>
+              <p>Colombo, Sri Lanka</p>
             </div>
           </div>
 
@@ -86,7 +86,7 @@ function Contact() {
               id="contact-email"
               name="email"
               type="email"
-              placeholder="you@example.com"
+              placeholder="name@gmail.com"
               required
             />
 
