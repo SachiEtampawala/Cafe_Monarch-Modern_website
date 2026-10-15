@@ -1,12 +1,25 @@
-/* Hero section with intro video */
+/* Hero section: the video is controlled by scrolling.
+   The section is tall, and the screen inside it stays in place while you scroll. */
 .hero {
   position: relative;
+  height: 300vh;
+  background: var(--bg-dark);
+}
+
+.hero-sticky {
+  position: sticky;
+  top: 0;
   height: 100vh;
   height: 100svh;
   min-height: 600px;
   overflow: hidden;
   background: var(--bg-dark);
   container-type: size;
+}
+
+/* If the video cannot load, the hero is just one screen tall */
+.hero-failed {
+  height: auto;
 }
 
 /* Background video: the whole frame is shown, centred below the header.
@@ -33,7 +46,7 @@
   mask-composite: intersect;
 }
 
-/* Dark fade on the left, appears after the video ends */
+/* Dark fade on the left, appears with the text */
 .hero-shade {
   position: absolute;
   inset: 0;
@@ -56,7 +69,7 @@
   opacity: 1;
 }
 
-/* Text: slides in from the left after the video */
+/* Text: slides in from the left at the end of the video */
 .hero-reveal {
   opacity: 0;
   visibility: hidden;
@@ -202,16 +215,20 @@
   color: var(--coffee-gold);
 }
 
-/* Skip button (only while the video plays) */
-.hero-skip {
+/* Hint: "scroll to play" (hidden once the visitor starts scrolling) */
+.hero-cue {
   position: absolute;
-  right: 9%;
   bottom: 40px;
+  left: 50%;
   z-index: 3;
+  transform: translateX(-50%);
 
-  padding: 11px 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 13px 24px;
 
-  background: rgba(36, 26, 20, 0.45);
+  background: rgba(36, 26, 20, 0.55);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border: 1px solid rgba(245, 240, 232, 0.35);
@@ -219,19 +236,34 @@
 
   color: var(--cream);
   font-size: 9px;
-  letter-spacing: 2.5px;
-  cursor: pointer;
+  letter-spacing: 3px;
+  white-space: nowrap;
+  pointer-events: none;
 
-  transition:
-    background 0.3s ease,
-    border-color 0.3s ease,
-    color 0.3s ease;
+  transition: opacity 0.6s ease;
 }
 
-.hero-skip:hover {
-  background: var(--coffee-gold);
-  border-color: var(--coffee-gold);
-  color: var(--bg-dark);
+.hero-cue span {
+  color: var(--coffee-gold);
+  font-size: 13px;
+  animation: hero-cue-bob 1.6s ease-in-out infinite;
+}
+
+.hero-scrolling .hero-cue,
+.hero-failed .hero-cue {
+  opacity: 0;
+}
+
+@keyframes hero-cue-bob {
+
+  0%,
+  100% {
+    transform: translateY(-2px);
+  }
+
+  50% {
+    transform: translateY(4px);
+  }
 }
 
 /* Header is slightly smaller on tablets and phones */
@@ -258,7 +290,7 @@
   }
 
   /* Soft dark fade at the top so the header is easy to read */
-  .hero::before {
+  .hero-sticky::before {
     position: absolute;
     inset: 0;
     z-index: 1;
@@ -279,12 +311,8 @@
     letter-spacing: -2px;
   }
 
-  .hero-bottom,
-  .hero-skip {
-    right: 7%;
-  }
-
   .hero-bottom {
+    right: 7%;
     left: 7%;
   }
 }
@@ -292,6 +320,10 @@
 /* Mobile */
 @media (max-width: 600px) {
   .hero {
+    height: 250vh;
+  }
+
+  .hero-sticky {
     min-height: 560px;
   }
 
@@ -348,16 +380,16 @@
     display: none;
   }
 
-  .hero-skip {
+  .hero-cue {
     bottom: 28px;
-    padding: 10px 16px;
+    padding: 11px 20px;
     font-size: 8px;
   }
 }
 
 /* Short screens */
 @media (max-height: 820px) and (min-width: 601px) {
-  .hero {
+  .hero-sticky {
     min-height: 500px;
   }
 
@@ -420,7 +452,11 @@
   .hero-shade,
   .hero-button,
   .hero-button span,
-  .hero-skip {
+  .hero-cue {
     transition: none;
+  }
+
+  .hero-cue span {
+    animation: none;
   }
 }
