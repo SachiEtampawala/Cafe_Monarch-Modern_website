@@ -34,10 +34,10 @@ function Footer() {
         <div className="footer-column">
           <h3>GET IN TOUCH</h3>
           <a href="mailto:hello@cafemonarch.com">
-            hello@cafemonarch.com
+            hello.cafemonarch@gmail.com
           </a>
           <a href="tel:+94112345678">+94 11 234 5678</a>
-          <p>Sri Lanka</p>
+          <p>Colombo, Sri Lanka</p>
         </div>
 
         <div className="footer-column">
