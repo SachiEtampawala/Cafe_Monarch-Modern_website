@@ -1,154 +1,309 @@
-MONARCH --- Modern Café Website ☕
+<div align="center">
+
+MONARCH ☕
+
+A Modern Café Website Experience
 
 Coffee for the moments that matter.
 
-MONARCH is a modern café website concept focused on a warm, premium
-visual identity. The design direction combines off-white and rich
-coffee-brown colours, elegant typography, atmospheric coffee
-photography, video, and smooth interactions.
+A coffee-inspired website concept built with React, Vite, and CSS — combining rich visual storytelling, menu discovery, and a warm, contemporary café identity.
+
+<br />
+
+Overview · Features · Tech Stack · Getting Started · Project Structure
+
+</div>
+
+☕ Overview
+
+MONARCH is a modern café website concept designed to present a premium, welcoming coffee experience online. The design brings together espresso-inspired colours, editorial-style typography, café photography, atmospheric video, and subtle interactive details.
+
+The website is organised into dedicated pages so visitors can explore the café concept, browse its menu, learn about its story, find visit information, and open the contact page.
+
+Project type: Front-end web development project
+Status: In development
+Location featured in the concept: Colombo, Sri Lanka
 
 ✨ Features
 
-Responsive layouts for desktop, tablet, and mobile
-Shared navigation and footer components
-Home, Menu, Our Story, Visit Us, and Contact pages
-Cinematic coffee-pouring video in the homepage hero
-Coffee product cards and café photography
-Warm off-white, latte, espresso, and chocolate colour palette
-Glassmorphism-inspired navigation
-Smooth scrolling and scroll-triggered reveals
-Interactive hover and 3D-style card effects
-Modular React components and page-specific CSS
-Some visual effects may still be under development as the website
-evolves.
+Five-page experience — Home, Menu, Our Story, Visit Us, and Contact.
 
-🛠️ Built With
+Cinematic home hero — uses a café video with a poster image as a visual fallback.
 
-React --- reusable UI components
-Vite --- development server and production build
-JavaScript / JSX --- interactive behaviour and page structure
-CSS --- styling, animation, and responsive layouts
-React Router --- client-side page navigation
+Menu organised by category — espresso classics, signature hot coffees, iced coffee creations, tea and botanical infusions, refreshing drinks, sweet treats, and savoury bakes.
+
+Dedicated story and visit pages — present the café philosophy and visit-related content.
+
+Contact form interface — includes fields for a visitor's name, email, subject, and message.
+
+Responsive navigation — includes a collapsible mobile menu and closes the menu when Escape is pressed.
+
+Scroll-aware navigation — the header changes appearance after scrolling.
+
+Reusable React components — shared navigation, footer, hero, coffee cards, menu media, and story sections.
+
+Visual interactions — reveal effects, hover treatments, and tilt-card styling.
+
+Coffee-inspired art direction — deep brown tones, warm neutrals, atmospheric photography, and video.
+
+Page navigation — client-side routing with React Router and scroll-to-top behaviour between routes.
+
+🖥️ Website Pages
+
+Page
+
+Route
+
+Purpose
+
+Home
+
+/
+
+Introduces MONARCH and its café atmosphere.
+
+Menu
+
+/menu
+
+Displays menu categories, items, prices, imagery, and video content.
+
+Our Story
+
+/story
+
+Shares the café concept and its philosophy.
+
+Visit Us
+
+/visit
+
+Presents visit-related information and café imagery.
+
+Contact
+
+/contact
+
+Displays contact information and a message form.
+
+🛠️ Technology Stack
+
+Technology
+
+How it is used
+
+React
+
+Builds the interface using reusable components.
+
+Vite
+
+Provides the local development server and production build tooling.
+
+JavaScript (ES Modules)
+
+Implements application logic and interactions.
+
+JSX
+
+Describes React page and component layouts.
+
+CSS
+
+Handles styling, layouts, responsive behaviour, transitions, and visual effects.
+
+React Router
+
+Handles client-side navigation between pages.
+
+ESLint
+
+Helps identify code-quality issues.
+
+HTML5 Video
+
+Displays atmospheric video assets on the website.
+
+🚀 Getting Started
+
+Follow these steps to run the project locally.
+
+Prerequisites
+
+Install Node.js (a current LTS release is recommended). npm is included with Node.js.
+
+Check that both are installed:
+
+node --version
+npm --version
+
+1. Clone the repository
+
+git clone https://github.com/SachiEtampawala/Cafe_Monarch-Modern_website.git
+
+2. Move into the project directory
+
+cd Cafe_Monarch-Modern_website
+
+3. Install dependencies
+
+npm install
+
+4. Start the development server
+
+npm run dev
+
+Vite will print a local address in the terminal. Open that address in your browser to view the website.
+
+5. Build for production
+
+npm run build
+
+The production files are generated in the dist/ directory.
+
+6. Preview the production build
+
+npm run preview
+
+Optional: Run the linter
+
+npm run lint
 
 📁 Project Structure
 
 Cafe_Monarch-Modern_website/
 ├── public/
-│   ├── images/
-│   └── videos/
+│   ├── images/                  # Café, coffee, menu, and page images
+│   ├── videos/                  # Hero and menu-category videos
+│   ├── favicon.svg
+│   └── icons.svg
 ├── src/
+│   ├── assets/                  # Source assets
 │   ├── components/
+│   │   ├── CoffeeCards.jsx      # Featured coffee cards
+│   │   ├── CoffeeExperience.jsx # Coffee experience section
+│   │   ├── Footer.jsx           # Shared footer
+│   │   ├── Hero.jsx             # Homepage hero section
+│   │   ├── MenuMedia.jsx        # Menu media presentation
+│   │   ├── MenuPhotoStrip.jsx   # Menu photo strip
+│   │   ├── Navbar.jsx           # Shared navigation
+│   │   ├── Reveal.jsx            # Reveal-on-scroll effect
+│   │   ├── RoastingStory.jsx    # Coffee roasting story section
+│   │   ├── ScrollToTop.jsx      # Scroll reset on route change
+│   │   └── TiltCard.jsx         # Interactive tilt card
+│   ├── data/
+│   │   └── menuData.js           # Menu categories and item data
 │   ├── pages/
-│   ├── App.jsx
-│   ├── main.jsx
-│   └── index.css
+│   │   ├── Home.jsx
+│   │   ├── Menu.jsx
+│   │   ├── Story.jsx
+│   │   ├── Visit.jsx
+│   │   └── Contact.jsx
+│   ├── styles/                   # Additional styles
+│   ├── App.jsx                   # Routes and application structure
+│   ├── index.css                 # Global styles
+│   └── main.jsx                  # React entry point
 ├── index.html
 ├── package.json
 ├── package-lock.json
+├── vite.config.js
 └── README.md
 
-The exact contents of folders may change as the project develops.
-
-🚀 Getting Started
-
-1. Install Node.js
-Install a current LTS version of Node.js if it is not already installed.
-
-2. Clone the repository
-git clone <your-repository-url>
-
-3. Open the project folder
-cd Cafe_Monarch-Modern_website
-
-4. Install dependencies
-npm install
-
-5. Start the development server
-npm run dev
-Vite will show a local development URL in the terminal. Open that URL in
-your browser.
-
-6. Create a production build
-npm run build
-To preview the production build locally:
-npm run preview
-
-🖼️ Assets
-
-Place website images in public/images/ and videos in public/videos/.
-
-Example:
-
-public/
-├── images/
-│   ├── logo.jpg
-│   ├── velvet-latte.jpg
-│   ├── midnight-mocha.jpg
-│   └── golden-cappuccino.jpg
-└── videos/
-    └── coffee-pour.mp4
-
-Use the exact filenames referenced by the code. If you add a logo, save
-it as public/images/logo.jpg or update the image path in the relevant
-component.
-
-For best performance, use appropriately sized, compressed images and
-videos. Decorative background videos should be muted and optimised so
-they do not slow down the page.
+Most page and component styles are kept in CSS files alongside their related components or pages.
 
 🎨 Design Direction
 
-MONARCH aims for a contemporary café identity built around:
-Warm off-white: clean, comfortable backgrounds
-Latte beige: soft surfaces and secondary sections
-Coffee brown: buttons and accents
-Espresso and dark chocolate: contrast, headings, and dark
-sections
-Soft gold: restrained decorative highlights
-The visual goal is elegant and immersive without sacrificing
-readability, accessibility, or mobile usability.
+MONARCH follows a contemporary café aesthetic:
 
-📱 Responsive Design
+Colour palette: espresso brown, chocolate, latte, cream, and warm neutral tones.
 
-The interface is designed to adapt to different screen sizes. Test
-navigation, video cropping, card layouts, text size, and button spacing
-on both desktop and mobile.
+Typography: expressive headings balanced with readable body text.
 
-♿ Accessibility and Performance
+Imagery: close-up coffee photography and café atmosphere.
 
-Provide meaningful alternative text for informative images.
-Keep text contrast readable.
-Ensure navigation and controls work with a keyboard.
-Respect reduced-motion preferences where practical.
-Optimise image and video file sizes.
-Do not rely on hover effects alone to communicate important
-information.
+Motion: restrained transitions, reveal effects, and interactive card details.
 
-🗺️ Pages
+Layout: spacious sections and clear page hierarchy.
 
-Home --- brand introduction and featured coffee
-Menu --- coffee and café menu
-Our Story --- the story and craft behind MONARCH
-Visit Us --- visit information
-Contact --- contact details and enquiry form
+Responsive approach: layouts and navigation intended to adapt to different screen sizes.
 
-🔮 Future Improvements
+The visual goal is to create a refined, immersive café experience without distracting from the menu and essential information.
 
-Refine the glassmorphism navbar and shared design system
-Add more high-quality café photography and video
-Improve scroll-based animations and interactive card effects
-Complete responsive and accessibility checks
-Add verified café location, opening hours, and contact details when
-available
+🎞️ Media Assets
 
-👩‍💻 Development
+Static images and videos are stored in the public/ directory:
 
-This project uses React and Vite. Reusable components help keep the
-design consistent across pages, while page-specific CSS supports
-individual layouts.
+public/images/ — café photography, menu imagery, and page visuals.
 
-📄 License
+public/videos/ — homepage hero video and videos used for menu categories.
 
-This project is currently a personal/learning project. Add a license
-file if you decide to distribute or reuse the code publicly under
-specific terms.
+Files in public/ are referenced from the site using root-relative paths, for example:
+
+<img src="/images/coffee-experience.jpg" alt="Coffee being prepared" />
+
+When replacing or adding assets, ensure that the filenames and paths match the references in the source code. Compress large media files where possible to improve loading performance.
+
+🧪 Available Scripts
+
+Command
+
+Description
+
+npm run dev
+
+Starts the local development server.
+
+npm run build
+
+Creates an optimised production build in dist/.
+
+npm run preview
+
+Serves the production build locally for review.
+
+npm run lint
+
+Runs ESLint checks.
+
+⚠️ Project Notes
+
+This repository contains a front-end website concept. It does not currently include a server-side application or database.
+
+The contact form currently displays a browser confirmation message; it does not send or store messages.
+
+Contact details and business information shown in the concept should be verified and updated before the site is used by a real café.
+
+The website should be tested on desktop and mobile browsers before deployment.
+
+Some visual details and accessibility improvements may require further testing as development continues.
+
+🔭 Potential Improvements
+
+Connect the contact form to a secure backend or form service.
+
+Add verified location, opening hours, and business contact details.
+
+Improve image and video loading with suitable compression and lazy loading.
+
+Review keyboard navigation, colour contrast, image alternative text, and reduced-motion support.
+
+Test page layouts across common mobile, tablet, and desktop sizes.
+
+Configure and document a deployment workflow.
+
+👩‍💻 Author
+
+Sachi Etampawala
+Software Engineering Undergraduate
+
+GitHub: @SachiEtampawala
+
+Project repository: Cafe_Monarch-Modern_website
+
+<div align="center">
+
+MONARCH · Coffee for the moments that matter.
+
+Designed and developed with React, Vite, and CSS.
+
+</div>
