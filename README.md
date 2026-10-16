@@ -302,6 +302,7 @@ Project repository: Cafe_Monarch-Modern_website
 
 <div align="center">
 
+
 MONARCH · Coffee for the moments that matter.
 
 Designed and developed with React, Vite, and CSS.
