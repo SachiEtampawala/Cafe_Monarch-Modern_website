@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import './Footer.css'
 
 function Footer() {
@@ -5,9 +6,20 @@ function Footer() {
     <footer className="monarch-footer">
       <div className="footer-main">
         <div className="footer-brand">
-          <a href="/" className="footer-logo">
+          <Link to="/" className="footer-logo">
+            <img
+              src="/images/logo.png"
+              alt=""
+              className="footer-logo-image"
+              width="46"
+              height="46"
+              onError={(event) => {
+                // Hide the image if logo.png is missing
+                event.currentTarget.style.display = 'none'
+              }}
+            />
             MONARCH<span>.</span>
-          </a>
+          </Link>
 
           <p className="footer-tagline">
             Coffee for the moments that matter.
@@ -18,26 +30,26 @@ function Footer() {
             and little moments worth remembering.
           </p>
 
-          <a href="/menu" className="footer-cta">
+          <Link to="/menu" className="footer-cta">
             DISCOVER OUR COFFEE ↗
-          </a>
+          </Link>
         </div>
 
         <div className="footer-column">
           <h3>EXPLORE</h3>
-          <a href="/">Home</a>
-          <a href="/menu">Our Menu</a>
-          <a href="/story">Our Story</a>
-          <a href="/visit">Visit Us</a>
+          <Link to="/">Home</Link>
+          <Link to="/menu">Our Menu</Link>
+          <Link to="/story">Our Story</Link>
+          <Link to="/visit">Visit Us</Link>
         </div>
 
         <div className="footer-column">
           <h3>GET IN TOUCH</h3>
           <a href="mailto:hello@cafemonarch.com">
-            hello.cafemonarch@gmail.com
+            hello@cafemonarch.com
           </a>
           <a href="tel:+94112345678">+94 11 234 5678</a>
-          <p>Colombo, Sri Lanka</p>
+          <p>Sri Lanka</p>
         </div>
 
         <div className="footer-column">
