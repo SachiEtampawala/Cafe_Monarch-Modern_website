@@ -36,13 +36,13 @@ function Navbar() {
     >
       <Link to="/" className="navbar-logo" onClick={closeMenu}>
         <img
-          src="/images/logo.jpg"
+          src="/images/logo.png"
           alt=""
           className="navbar-logo-image"
           width="40"
           height="40"
           onError={(event) => {
-            // Hide the image if logo.jpg is missing
+            // Hide the image if logo.png is missing
             event.currentTarget.style.display = 'none'
           }}
         />
