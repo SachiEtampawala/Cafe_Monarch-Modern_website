@@ -16,9 +16,9 @@ A contemporary café website concept built with React, Vite, and CSS, combining 
 
 ## Overview
 
-MONARCH is a multi-page café website concept designed around a refined coffee-house identity. Its visual direction pairs espresso-inspired tones and warm neutrals with café photography, atmospheric video, spacious layouts, and subtle motion.
+MONARCH is a multi-page cafe website concept designed around a refined coffee-house identity. Its visual direction pairs espresso-inspired tones and warm neutrals with cafe photography, atmospheric video, spacious layouts, and subtle motion.
 
-Visitors can discover the café concept, explore its menu, learn about its philosophy, find visit information, and contact the team.
+Visitors can discover the cafe concept, explore its menu, learn about its philosophy, find visit information, and contact the team.
 
 - **Project type:** Front-end web development
 - **Status:** In development
