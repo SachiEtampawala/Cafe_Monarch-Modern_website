@@ -38,7 +38,7 @@ function Visit() {
           <div className="visit-detail">
             <span className="visit-label">FIND US</span>
             <h2>Our Location</h2>
-            <p>Colombo</p>
+            <p>No 123, Galle Road, Bambalapitiya, Colombo 06.</p>
             <p>Sri Lanka</p>
           </div>
 
