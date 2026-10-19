@@ -2,7 +2,7 @@
 
 <img src="public/images/logo.png" alt="MONARCH logo" width="110" />
 
-# MONARCH — Modern Café Website
+# MONARCH — Modern Cafe Website
 
 **Coffee for the moments that matter.**
 
@@ -34,11 +34,11 @@ Visitors can discover the café concept, explore its menu, learn about its philo
 <table>
   <tr>
     <td width="50%">
-      <img src="public/images/signature-hot-coffees.jpg" alt="Signature coffee menu imagery" width="100%" />
+      <img src="public/images/readme/menu.png" alt="Signature coffee menu imagery" width="100%" />
       <p align="center"><strong>Menu & Coffee Selection</strong></p>
     </td>
     <td width="50%">
-      <img src="public/images/visit-cafe.jpg" alt="Café visit page imagery" width="100%" />
+      <img src="public/images/readme/visit.png" alt="Café visit page imagery" width="100%" />
       <p align="center"><strong>Visit Us</strong></p>
     </td>
   </tr>
@@ -46,10 +46,10 @@ Visitors can discover the café concept, explore its menu, learn about its philo
 
 ## Key Features
 
-- **Cinematic homepage:** atmospheric café video with a poster image fallback.
+- **Cinematic homepage:** atmospheric cafe video with a poster image fallback.
 - **Category-based menu:** espresso classics, signature hot coffees, iced coffee creations, tea and botanical infusions, refreshing drinks, sweet treats, and savoury bakes.
 - **Five dedicated pages:** Home, Menu, Our Story, Visit Us, and Contact.
-- **Visual storytelling:** café photography, category-specific video content, and image-led sections.
+- **Visual storytelling:** cafe photography, category-specific video content, and image-led sections.
 - **Interactive details:** reveal-on-scroll effects, hover treatments, and tilt-card styling.
 - **Responsive navigation:** collapsible mobile menu, scroll-aware header styling, and keyboard support for closing the menu with Escape.
 - **Reusable React components:** shared navigation, footer, hero, coffee cards, menu media, and story sections.
@@ -62,10 +62,10 @@ Visitors can discover the café concept, explore its menu, learn about its philo
 
 | Page | Route | What visitors can explore |
 |---|---|---|
-| Home | `/` | Café introduction, featured coffee cards, roasting story, and coffee experience sections |
+| Home | `/` | Cafe introduction, featured coffee cards, roasting story, and coffee experience sections |
 | Menu | `/menu` | Menu categories, descriptions, prices, images, and related video content |
-| Our Story | `/story` | Café philosophy and the values behind the MONARCH concept |
-| Visit Us | `/visit` | Location details, opening hours, café imagery, and a link to the contact page |
+| Our Story | `/story` | Cafe philosophy and the values behind the MONARCH concept |
+| Visit Us | `/visit` | Location details, opening hours, cafe imagery, and a link to the contact page |
 | Contact | `/contact` | Contact information and a message form |
 
 ## Technology Stack
@@ -129,6 +129,6 @@ Component and page-specific CSS files sit alongside their related JSX files.
 
 <div align="center">
 
-**MONARCH** · A modern café website concept
+**MONARCH** · A modern cafe website concept
 
 </div>
