@@ -40,7 +40,7 @@ function Story() {
 
           <p>
             Coffee for the moments that matter.
-            A little pause in a busy world 🤎.
+            A little pause in a busy world.
           </p>
         </header>
 
