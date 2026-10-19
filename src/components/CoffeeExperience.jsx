@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import './CoffeeExperience.css'
 
 function CoffeeExperience() {
@@ -25,9 +26,9 @@ function CoffeeExperience() {
           made with care. Find your moment at MONARCH.
         </p>
 
-        <a href="/menu" className="experience-button">
+        <Link to="/menu" className="experience-button">
           DISCOVER OUR MENU <span>↗</span>
-        </a>
+        </Link>
       </div>
 
       <span className="experience-caption">
