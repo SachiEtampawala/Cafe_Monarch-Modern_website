@@ -32,6 +32,17 @@ Visitors can discover the cafe concept, explore its menu, learn about its philos
 <p align="center"><em>Homepage visual direction — cinematic cafe atmosphere and coffee-inspired styling.</em></p>
 
 <table>
+    </tr>
+  <tr>
+    <td width="50%">
+      <img src="public/images/readme/home.png" alt="Home page imagery" width="100%" />
+      <p align="center"><strong>Home</strong></p>
+    </td>
+    <td width="50%">
+      <img src="public/images/readme/footer.png" alt="Footer page imagery" width="100%" />
+      <p align="center"><strong>Footer</strong></p>
+    </td>
+  </tr>
   <tr>
     <td width="50%">
       <img src="public/images/readme/menu.png" alt="Signature coffee menu imagery" width="100%" />
