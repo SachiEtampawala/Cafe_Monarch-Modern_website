@@ -10,7 +10,7 @@ function Visit() {
 
       <main>
         <header className="visit-hero">
-          <span className="visit-eyebrow">YOUR TABLE IS WAITING 🤎</span>
+          <span className="visit-eyebrow">YOUR TABLE IS WAITING</span>
 
           <h1>
             Come find
