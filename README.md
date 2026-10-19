@@ -29,7 +29,7 @@ Visitors can discover the café concept, explore its menu, learn about its philo
 <p align="center">
   <img src="public/images/hero-poster.jpg" alt="MONARCH homepage café visual" width="100%" />
 </p>
-<p align="center"><em>Homepage visual direction — cinematic café atmosphere and coffee-inspired styling.</em></p>
+<p align="center"><em>Homepage visual direction — cinematic cafe atmosphere and coffee-inspired styling.</em></p>
 
 <table>
   <tr>
