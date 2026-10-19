@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import './Visit.css'
@@ -64,9 +65,9 @@ function Visit() {
             <span className="visit-label">SAY HELLO</span>
             <h2>Get in Touch</h2>
 
-            <a href="/contact" className="visit-contact-link">
+            <Link to="/contact" className="visit-contact-link">
               Contact our team ↗
-            </a>
+            </Link>
 
             <p>We look forward to welcoming you with pleasure.</p>
           </div>
@@ -74,7 +75,7 @@ function Visit() {
 
         <section className="visit-ending">
           <h2>Your next favourite moment starts here...</h2>
-          <a href="/menu">EXPLORE OUR MENU ↗</a>
+          <Link to="/menu">EXPLORE OUR MENU ↗</Link>
         </section>
       </main>
 
