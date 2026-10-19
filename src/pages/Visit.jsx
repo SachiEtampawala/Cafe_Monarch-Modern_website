@@ -56,9 +56,6 @@ function Visit() {
               <span>9:00 AM – 9:00 PM</span>
             </div>
 
-            <p className="visit-note">
-              Sample opening hours — to be confirmed.
-            </p>
           </div>
 
           <div className="visit-detail">
