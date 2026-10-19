@@ -46,17 +46,17 @@ Visitors can discover the café concept, explore its menu, learn about its philo
 
 ## Key Features
 
-- **Cinematic homepage:** atmospheric cafe video with a poster image fallback.
-- **Category-based menu:** espresso classics, signature hot coffees, iced coffee creations, tea and botanical infusions, refreshing drinks, sweet treats, and savoury bakes.
-- **Five dedicated pages:** Home, Menu, Our Story, Visit Us, and Contact.
-- **Visual storytelling:** cafe photography, category-specific video content, and image-led sections.
-- **Interactive details:** reveal-on-scroll effects, hover treatments, and tilt-card styling.
-- **Responsive navigation:** collapsible mobile menu, scroll-aware header styling, and keyboard support for closing the menu with Escape.
-- **Reusable React components:** shared navigation, footer, hero, coffee cards, menu media, and story sections.
-- **Menu browsing:** category jump links, descriptions, imagery, and displayed prices.
-- **Contact form interface:** required name, email, subject, and message fields with a submission confirmation.
-- **Client-side navigation:** React Router routes and scroll-to-top behaviour between pages.
-- **Café-focused visual identity:** deep coffee tones, warm neutrals, expressive headings, and contemporary layouts.
+- **Cinematic homepage-** atmospheric cafe video with a poster image fallback.
+- **Category-based menu-** espresso classics, signature hot coffees, iced coffee creations, tea and botanical infusions, refreshing drinks, sweet treats, and savoury bakes.
+- **Five dedicated pages-** Home, Menu, Our Story, Visit Us, and Contact.
+- **Visual storytelling-** cafe photography, category-specific video content, and image-led sections.
+- **Interactive details-** reveal-on-scroll effects, hover treatments, and tilt-card styling.
+- **Responsive navigation-** collapsible mobile menu, scroll-aware header styling, and keyboard support for closing the menu with Escape.
+- **Reusable React components-** shared navigation, footer, hero, coffee cards, menu media, and story sections.
+- **Menu browsing-** category jump links, descriptions, imagery, and displayed prices.
+- **Contact form interface-** required name, email, subject, and message fields with a submission confirmation.
+- **Client-side navigation-** React Router routes and scroll-to-top behaviour between pages.
+- **Cafe-focused visual identity-** deep coffee tones, warm neutrals, expressive headings, and contemporary layouts.
 
 ## Website Pages
 
