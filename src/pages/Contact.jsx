@@ -15,7 +15,7 @@ function Contact() {
 
       <main>
         <header className="contact-hero">
-          <span className="contact-eyebrow">WE WOULD LOVE TO HEAR FROM YOU 🤎</span>
+          <span className="contact-eyebrow">WE WOULD LOVE TO HEAR FROM YOU</span>
 
           <h1>
             Let's start
