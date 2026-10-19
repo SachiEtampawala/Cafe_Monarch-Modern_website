@@ -104,7 +104,8 @@ Visitors can discover the cafe concept, explore its menu, learn about its philos
 ```text
 Cafe_Monarch-Modern_website/
 ├── public/
-│   ├── images/                  # Logo, café photography, menu and page images
+│   ├── images/                  # Logo, cafe photography, menu and page images
+│   │   ├── readme/              # Images for the README file 
 │   └── videos/                  # Homepage and menu-category videos
 ├── src/
 │   ├── components/
