@@ -38,8 +38,18 @@ Visitors can discover the cafe concept, explore its menu, learn about its philos
       <p align="center"><strong>Menu & Coffee Selection</strong></p>
     </td>
     <td width="50%">
-      <img src="public/images/readme/visit.png" alt="Café visit page imagery" width="100%" />
+      <img src="public/images/readme/visit.png" alt="Cafe visit page imagery" width="100%" />
       <p align="center"><strong>Visit Us</strong></p>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%">
+      <img src="public/images/readme/contact.png" alt="Contact Us page imagery" width="100%" />
+      <p align="center"><strong>Contact Us</strong></p>
+    </td>
+    <td width="50%">
+      <img src="public/images/readme/story.png" alt="Story page imagery" width="100%" />
+      <p align="center"><strong>Our Story</strong></p>
     </td>
   </tr>
 </table>
