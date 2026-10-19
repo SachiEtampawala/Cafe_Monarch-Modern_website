@@ -26,17 +26,23 @@
   transform: scale(1.035);
 }
 
+/* Dark fade over the whole photo (not just behind the text) */
+.experience-background::after {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg,
+      rgba(15, 12, 10, 0.9) 0%,
+      rgba(15, 12, 10, 0.55) 55%,
+      rgba(15, 12, 10, 0.08) 100%);
+  content: '';
+  pointer-events: none;
+}
+
 .experience-overlay {
   position: relative;
   z-index: 1;
   width: 100%;
   padding: 100px 10%;
-  background: linear-gradient(
-    90deg,
-    rgba(15, 12, 10, 0.9) 0%,
-    rgba(15, 12, 10, 0.55) 55%,
-    rgba(15, 12, 10, 0.08) 100%
-  );
 }
 
 .experience-label {
@@ -99,13 +105,14 @@
     min-height: 600px;
   }
 
+  .experience-background::after {
+    background: linear-gradient(90deg,
+        rgba(15, 12, 10, 0.85),
+        rgba(15, 12, 10, 0.35));
+  }
+
   .experience-overlay {
     padding: 80px 7%;
-    background: linear-gradient(
-      90deg,
-      rgba(15, 12, 10, 0.85),
-      rgba(15, 12, 10, 0.35)
-    );
   }
 
   .experience-caption {
